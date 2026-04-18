@@ -1,6 +1,6 @@
 /*
  * FXN Holdings — Navbar Component
- * Design: Kinetic Blueprint — dark translucent nav with electric blue accents
+ * Design: Kinetic Blueprint — light theme nav with electric blue accents
  * Features: sticky scroll, mobile hamburger, active route highlighting
  */
 import { useState, useEffect } from "react";
@@ -34,7 +34,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[oklch(0.18_0.04_240/0.95)] backdrop-blur-md border-b border-white/10 shadow-lg"
+          ? "bg-white/95 backdrop-blur-md border-b border-[oklch(0.92_0.004_286.32)] shadow-md"
           : "bg-transparent"
       }`}
     >
@@ -47,10 +47,10 @@ export default function Navbar() {
                 <Globe className="w-5 h-5 text-white" />
               </div>
               <div>
-                <span className="font-['Space_Grotesk'] font-700 text-white text-lg leading-none tracking-tight">
+                <span className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] text-lg leading-none tracking-tight">
                   FXN<span className="text-[oklch(0.62_0.2_220)]"> Holdings</span>
                 </span>
-                <p className="mono-label text-[oklch(0.65_0.02_240)] text-[10px] leading-none mt-0.5">
+                <p className="mono-label text-[oklch(0.45_0.02_240)] text-[10px] leading-none mt-0.5">
                   LIMITED · UK
                 </p>
               </div>
@@ -65,7 +65,7 @@ export default function Navbar() {
                   className={`nav-link font-['Space_Grotesk'] font-500 text-sm transition-colors duration-200 ${
                     location === link.href
                       ? "text-[oklch(0.62_0.2_220)] active"
-                      : "text-[oklch(0.75_0.02_240)] hover:text-white"
+                      : "text-[oklch(0.45_0.02_240)] hover:text-[oklch(0.235_0.015_65)]"
                   }`}
                 >
                   {link.label}
@@ -81,7 +81,7 @@ export default function Navbar() {
 
           {/* Mobile Hamburger */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-[oklch(0.235_0.015_65)] p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -98,16 +98,16 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[oklch(0.18_0.04_240/0.98)] backdrop-blur-md border-b border-white/10"
+            className="md:hidden bg-white/98 backdrop-blur-md border-b border-[oklch(0.92_0.004_286.32)]"
           >
             <div className="container py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className={`block font-['Space_Grotesk'] font-500 text-base py-2 border-b border-white/5 transition-colors ${
+                    className={`block font-['Space_Grotesk'] font-500 text-base py-2 border-b border-[oklch(0.92_0.004_286.32)] transition-colors ${
                       location === link.href
                         ? "text-[oklch(0.62_0.2_220)]"
-                        : "text-[oklch(0.75_0.02_240)]"
+                        : "text-[oklch(0.45_0.02_240)]"
                     }`}
                   >
                     {link.label}

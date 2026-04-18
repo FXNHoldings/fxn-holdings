@@ -64,7 +64,7 @@ export default function Contact() {
     <div className="overflow-x-hidden pt-16">
       {/* ── Page Hero ── */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[oklch(0.14_0.04_240)]" />
+        <div className="absolute inset-0 bg-white" />
         <div className="absolute inset-0 blueprint-grid opacity-20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[oklch(0.62_0.2_220/0.06)] blur-3xl" />
         <div className="relative container text-center">
@@ -79,13 +79,13 @@ export default function Contact() {
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
             </div>
             <h1
-              className="font-['Space_Grotesk'] font-700 text-white leading-tight mb-6"
+              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
             >
               Contact{" "}
               <span className="text-gradient-blue">FXN Holdings</span>
             </h1>
-            <p className="text-[oklch(0.75_0.02_240)] text-lg max-w-xl mx-auto leading-relaxed">
+            <p className="text-[oklch(0.45_0.02_240)] text-lg max-w-xl mx-auto leading-relaxed">
               Whether you're looking to partner, advertise, or simply learn more about our portfolio, we'd love to hear from you.
             </p>
           </motion.div>
@@ -105,7 +105,7 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-1"
             >
-              <h2 className="font-['Space_Grotesk'] font-600 text-white text-2xl mb-6">
+              <h2 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-2xl mb-6">
                 Company Information
               </h2>
 
@@ -165,13 +165,13 @@ export default function Contact() {
               </div>
 
               {/* Enquiry types */}
-              <div className="bg-[oklch(0.22_0.035_240)] border border-white/10 p-5">
+              <div className="bg-white border border-[oklch(0.92_0.004_286.32)] p-5">
                 <p className="mono-label text-[oklch(0.55_0.02_240)] text-xs mb-4">WE WELCOME ENQUIRIES ABOUT</p>
                 <div className="flex flex-col gap-3">
                   {contactReasons.map((r) => (
                     <div key={r.value} className="flex items-center gap-3">
                       <r.icon className="w-4 h-4 text-[oklch(0.62_0.2_220)]" />
-                      <span className="text-[oklch(0.75_0.02_240)] text-sm">{r.label}</span>
+                      <span className="text-[oklch(0.45_0.02_240)] text-sm">{r.label}</span>
                     </div>
                   ))}
                 </div>
@@ -187,21 +187,21 @@ export default function Contact() {
               className="lg:col-span-2"
             >
               {submitted ? (
-                <div className="bg-[oklch(0.22_0.035_240)] border border-[oklch(0.62_0.2_220/0.4)] p-12 text-center h-full flex flex-col items-center justify-center">
+                <div className="bg-white border border-[oklch(0.62_0.2_220/0.4)] p-12 text-center h-full flex flex-col items-center justify-center">
                   <CheckCircle className="w-16 h-16 text-[oklch(0.62_0.2_220)] mb-6" />
-                  <h3 className="font-['Space_Grotesk'] font-700 text-white text-2xl mb-3">
+                  <h3 className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] text-2xl mb-3">
                     Message Sent!
                   </h3>
-                  <p className="text-[oklch(0.65_0.02_240)] text-base max-w-sm">
+                  <p className="text-[oklch(0.45_0.02_240)] text-base max-w-sm">
                     Thank you for reaching out to FXN Holdings. We'll review your message and get back to you within 2 business days.
                   </p>
                 </div>
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="bg-[oklch(0.22_0.035_240)] border border-white/10 p-8"
+                  className="bg-white border border-[oklch(0.92_0.004_286.32)] p-8"
                 >
-                  <h2 className="font-['Space_Grotesk'] font-600 text-white text-2xl mb-6">
+                  <h2 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-2xl mb-6">
                     Send Us a Message
                   </h2>
 
@@ -215,7 +215,7 @@ export default function Contact() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Your full name"
-                        className="w-full bg-[oklch(0.18_0.04_240)] border border-white/10 text-white placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors"
+                        className="w-full bg-[oklch(0.18_0.04_240)] border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors"
                         required
                       />
                     </div>
@@ -228,7 +228,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="your@email.com"
-                        className="w-full bg-[oklch(0.18_0.04_240)] border border-white/10 text-white placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors"
+                        className="w-full bg-[oklch(0.18_0.04_240)] border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors"
                         required
                       />
                     </div>
@@ -244,7 +244,7 @@ export default function Contact() {
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="Your company name"
-                        className="w-full bg-[oklch(0.18_0.04_240)] border border-white/10 text-white placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors"
+                        className="w-full bg-[oklch(0.18_0.04_240)] border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors"
                       />
                     </div>
                     <div>
@@ -254,7 +254,7 @@ export default function Contact() {
                       <select
                         value={formData.reason}
                         onChange={(e) => setFormData({ ...formData, reason: e.target.value })}
-                        className="w-full bg-[oklch(0.18_0.04_240)] border border-white/10 text-white px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors appearance-none"
+                        className="w-full bg-[oklch(0.18_0.04_240)] border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors appearance-none"
                       >
                         <option value="" className="bg-[oklch(0.18_0.04_240)]">Select a reason</option>
                         {contactReasons.map((r) => (
@@ -275,14 +275,14 @@ export default function Contact() {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us about your enquiry..."
                       rows={6}
-                      className="w-full bg-[oklch(0.18_0.04_240)] border border-white/10 text-white placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors resize-none"
+                      className="w-full bg-[oklch(0.18_0.04_240)] border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors resize-none"
                       required
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="group w-full flex items-center justify-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-white py-4 font-['Space_Grotesk'] font-600 text-sm transition-all duration-300 glow-blue"
+                    className="group w-full flex items-center justify-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-[oklch(0.235_0.015_65)] py-4 font-['Space_Grotesk'] font-600 text-sm transition-all duration-300 glow-blue"
                   >
                     Send Message
                     <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -299,7 +299,7 @@ export default function Contact() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20 bg-[oklch(0.16_0.038_240)] relative">
+      <section className="py-20 bg-[oklch(0.96_0.002_240)] relative">
         <div className="absolute inset-0 blueprint-grid opacity-10" />
         <div className="relative container">
           <motion.div
@@ -314,7 +314,7 @@ export default function Contact() {
               <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">FAQ</span>
             </div>
             <h2
-              className="font-['Space_Grotesk'] font-700 text-white leading-tight"
+              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               Frequently Asked Questions
@@ -329,13 +329,13 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
-                className="bg-[oklch(0.22_0.035_240)] border border-white/10 overflow-hidden"
+                className="bg-white border border-[oklch(0.92_0.004_286.32)] overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between px-6 py-4 text-left"
                 >
-                  <span className="font-['Space_Grotesk'] font-500 text-white text-sm pr-4">
+                  <span className="font-['Space_Grotesk'] font-500 text-[oklch(0.235_0.015_65)] text-sm pr-4">
                     {faq.q}
                   </span>
                   <span
@@ -346,8 +346,8 @@ export default function Contact() {
                   </span>
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-5 border-t border-white/5">
-                    <p className="text-[oklch(0.65_0.02_240)] text-sm leading-relaxed pt-4">
+                  <div className="px-6 pb-5 border-t border-[oklch(0.92_0.004_286.32)]">
+                    <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed pt-4">
                       {faq.a}
                     </p>
                   </div>

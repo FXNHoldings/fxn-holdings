@@ -1,6 +1,6 @@
 /*
  * FXN Holdings — Home Page
- * Design: Kinetic Blueprint — dark slate, electric blue, amber gold
+ * Design: Kinetic Blueprint (Light) — clean white, electric blue, amber gold
  * Sections: Hero, Stats, Portfolio Preview, About Teaser, Why FXN, CTA
  */
 import { useEffect, useRef, useState } from "react";
@@ -133,16 +133,12 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background image */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-[oklch(0.97_0.001_240)] to-[oklch(0.94_0.01_240)]">
+        {/* Background elements */}
         <div className="absolute inset-0">
-          <img
-            src="/manus-storage/hero_banner_6c37e63f.jpg"
-            alt="FXN Holdings digital network"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.14_0.04_240/0.95)] via-[oklch(0.14_0.04_240/0.75)] to-[oklch(0.14_0.04_240/0.4)]" />
-          <div className="absolute inset-0 blueprint-grid opacity-20" />
+          <div className="absolute inset-0 blueprint-grid opacity-8" />
+          <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[oklch(0.62_0.2_220/0.05)] blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[oklch(0.75_0.17_75/0.05)] blur-3xl" />
         </div>
 
         <div className="relative container pt-24 pb-16">
@@ -157,7 +153,7 @@ export default function Home() {
                 UK DIGITAL HOLDING COMPANY
               </span>
               <span className="w-8 h-px bg-[oklch(0.62_0.2_220)]" />
-              <span className="mono-label text-[oklch(0.65_0.02_240)] text-xs">
+              <span className="mono-label text-[oklch(0.45_0.02_240)] text-xs">
                 EST. 2024
               </span>
             </motion.div>
@@ -166,7 +162,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-['Space_Grotesk'] font-700 text-white leading-[1.05] mb-6"
+              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-[1.05] mb-6"
               style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
             >
               Building the{" "}
@@ -179,7 +175,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-[oklch(0.78_0.02_240)] text-lg leading-relaxed mb-10 max-w-xl"
+              className="text-[oklch(0.45_0.02_240)] text-lg leading-relaxed mb-10 max-w-xl"
             >
               FXN Holdings Limited is a UK-registered digital holding company managing a growing portfolio of ecommerce, travel, blog, price comparison, and affiliate websites — all engineered for performance and growth.
             </motion.p>
@@ -197,7 +193,7 @@ export default function Home() {
                 </button>
               </Link>
               <Link href="/about">
-                <button className="flex items-center gap-2 border border-white/20 text-white hover:border-[oklch(0.62_0.2_220)] hover:text-[oklch(0.62_0.2_220)] px-7 py-3.5 font-['Space_Grotesk'] font-600 text-sm transition-all duration-300">
+                <button className="flex items-center gap-2 border border-[oklch(0.235_0.015_65)] text-[oklch(0.235_0.015_65)] hover:border-[oklch(0.62_0.2_220)] hover:text-[oklch(0.62_0.2_220)] px-7 py-3.5 font-['Space_Grotesk'] font-600 text-sm transition-all duration-300">
                   About FXN Holdings
                 </button>
               </Link>
@@ -212,7 +208,7 @@ export default function Home() {
           transition={{ delay: 1.5, duration: 0.8 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="mono-label text-[oklch(0.5_0.02_240)] text-[10px]">SCROLL</span>
+          <span className="mono-label text-[oklch(0.55_0.02_240)] text-[10px]">SCROLL</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
@@ -222,15 +218,8 @@ export default function Home() {
       </section>
 
       {/* ── Stats ── */}
-      <section
-        className="relative py-16 border-y border-white/10 overflow-hidden"
-        style={{
-          backgroundImage: `url('/manus-storage/stats_bg_0c2b2cec.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-[oklch(0.14_0.04_240/0.88)]" />
+      <section className="relative py-16 border-y border-[oklch(0.92_0.004_286.32)] overflow-hidden bg-gradient-to-r from-[oklch(0.96_0.002_240)] to-[oklch(0.94_0.01_240)]">
+        <div className="absolute inset-0 blueprint-grid opacity-8" />
         <div className="relative container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
@@ -243,7 +232,7 @@ export default function Home() {
                 className="text-center"
               >
                 <stat.icon className="w-6 h-6 text-[oklch(0.62_0.2_220)] mx-auto mb-3" />
-                <div className="font-['Space_Grotesk'] font-700 text-white mb-1" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+                <div className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] mb-1" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
                 <p className="mono-label text-[oklch(0.55_0.02_240)] text-xs">{stat.label}</p>
@@ -269,11 +258,11 @@ export default function Home() {
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
               <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">OUR PORTFOLIO</span>
             </div>
-            <h2 className="font-['Space_Grotesk'] font-700 text-white leading-tight mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               Five Digital Verticals,<br />
               <span className="text-gradient-blue">One Holding Company</span>
             </h2>
-            <p className="text-[oklch(0.65_0.02_240)] text-base max-w-xl leading-relaxed">
+            <p className="text-[oklch(0.45_0.02_240)] text-base max-w-xl leading-relaxed">
               FXN Holdings manages a carefully curated portfolio of web properties, each built to dominate its niche through quality content, technical excellence, and strategic monetisation.
             </p>
           </motion.div>
@@ -287,7 +276,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className={`portfolio-card bg-[oklch(0.22_0.035_240)] border border-white/10 overflow-hidden ${i === 0 ? "md:col-span-2 lg:col-span-1" : ""}`}
+                className={`portfolio-card bg-white border border-[oklch(0.92_0.004_286.32)] overflow-hidden ${i === 0 ? "md:col-span-2 lg:col-span-1" : ""}`}
               >
                 {/* Card image */}
                 <div className="relative h-48 overflow-hidden">
@@ -296,10 +285,10 @@ export default function Home() {
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.035_240)] to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
                   <div
                     className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5"
-                    style={{ background: `${item.color}22`, border: `1px solid ${item.color}44` }}
+                    style={{ background: `${item.color}22`, border: `1px solid ${item.color}55` }}
                   >
                     <item.icon className="w-3.5 h-3.5" style={{ color: item.color }} />
                     <span className="mono-label text-[10px]" style={{ color: item.color }}>
@@ -310,17 +299,17 @@ export default function Home() {
 
                 {/* Card content */}
                 <div className="p-6 gold-border-left">
-                  <h3 className="font-['Space_Grotesk'] font-600 text-white text-lg mb-3">
+                  <h3 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-lg mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-[oklch(0.65_0.02_240)] text-sm leading-relaxed mb-4">
+                  <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed mb-4">
                     {item.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="mono-label text-[10px] px-2 py-1 bg-white/5 text-[oklch(0.55_0.02_240)] border border-white/10"
+                        className="mono-label text-[10px] px-2 py-1 bg-[oklch(0.96_0.002_240)] text-[oklch(0.55_0.02_240)] border border-[oklch(0.92_0.004_286.32)]"
                       >
                         {tag}
                       </span>
@@ -349,15 +338,8 @@ export default function Home() {
       </section>
 
       {/* ── About Teaser ── */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/manus-storage/about_section_a8a5c840.jpg"
-            alt="FXN Holdings team"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.14_0.04_240/0.96)] via-[oklch(0.14_0.04_240/0.85)] to-[oklch(0.14_0.04_240/0.5)]" />
-        </div>
+      <section className="py-24 relative overflow-hidden bg-gradient-to-r from-[oklch(0.62_0.2_220/0.08)] to-[oklch(0.75_0.17_75/0.08)]">
+        <div className="absolute inset-0 blueprint-grid opacity-10" />
         <div className="relative container">
           <div className="max-w-2xl">
             <motion.div
@@ -370,14 +352,14 @@ export default function Home() {
                 <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
                 <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">ABOUT US</span>
               </div>
-              <h2 className="font-['Space_Grotesk'] font-700 text-white leading-tight mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+              <h2 className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
                 A UK Digital Company<br />
                 <span className="text-gradient-blue">Built for Scale</span>
               </h2>
-              <p className="text-[oklch(0.78_0.02_240)] text-base leading-relaxed mb-4">
+              <p className="text-[oklch(0.235_0.015_65)] text-base leading-relaxed mb-4">
                 Founded and registered in England &amp; Wales, FXN Holdings Limited was established with a clear mission: to build, acquire, and manage a portfolio of digital web properties that deliver real value to users and sustainable returns for the business.
               </p>
-              <p className="text-[oklch(0.65_0.02_240)] text-base leading-relaxed mb-8">
+              <p className="text-[oklch(0.45_0.02_240)] text-base leading-relaxed mb-8">
                 Our team combines expertise in digital marketing, web development, SEO, content strategy, and affiliate marketing to create web properties that rank, convert, and grow.
               </p>
               <Link href="/about">
@@ -407,7 +389,7 @@ export default function Home() {
               <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">WHY FXN HOLDINGS</span>
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
             </div>
-            <h2 className="font-['Space_Grotesk'] font-700 text-white leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               What Sets Us Apart
             </h2>
           </motion.div>
@@ -420,15 +402,15 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="bg-[oklch(0.22_0.035_240)] border border-white/10 p-6 hover:border-[oklch(0.62_0.2_220/0.4)] transition-all duration-300 group"
+                className="bg-white border border-[oklch(0.92_0.004_286.32)] p-6 hover:border-[oklch(0.62_0.2_220/0.4)] transition-all duration-300 group"
               >
-                <div className="w-10 h-10 bg-[oklch(0.62_0.2_220/0.15)] flex items-center justify-center mb-4 group-hover:bg-[oklch(0.62_0.2_220/0.25)] transition-colors">
+                <div className="w-10 h-10 bg-[oklch(0.62_0.2_220/0.08)] flex items-center justify-center mb-4 group-hover:bg-[oklch(0.62_0.2_220/0.15)] transition-colors">
                   <item.icon className="w-5 h-5 text-[oklch(0.62_0.2_220)]" />
                 </div>
-                <h3 className="font-['Space_Grotesk'] font-600 text-white text-base mb-2">
+                <h3 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-base mb-2">
                   {item.title}
                 </h3>
-                <p className="text-[oklch(0.65_0.02_240)] text-sm leading-relaxed">
+                <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -438,11 +420,10 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[oklch(0.62_0.2_220/0.08)]" />
-        <div className="absolute inset-0 blueprint-grid opacity-15" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.62_0.2_220/0.5)] to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.62_0.2_220/0.5)] to-transparent" />
+      <section className="py-20 relative overflow-hidden bg-gradient-to-r from-[oklch(0.62_0.2_220/0.08)] to-[oklch(0.75_0.17_75/0.08)]">
+        <div className="absolute inset-0 blueprint-grid opacity-10" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.62_0.2_220/0.3)] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.62_0.2_220/0.3)] to-transparent" />
         <div className="relative container text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -450,12 +431,11 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs block mb-4">GET IN TOUCH</span>
-            <h2 className="font-['Space_Grotesk'] font-700 text-white leading-tight mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               Interested in Partnering<br />with FXN Holdings?
             </h2>
-            <p className="text-[oklch(0.65_0.02_240)] text-base max-w-lg mx-auto mb-8">
-              Whether you're looking to collaborate, advertise on our platforms, or explore acquisition opportunities, we'd love to hear from you.
+            <p className="text-[oklch(0.45_0.02_240)] text-base max-w-lg mx-auto mb-8">
+              Whether you're looking to collaborate, advertise, or explore acquisition opportunities, we'd love to hear from you.
             </p>
             <Link href="/contact">
               <button className="group inline-flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-white px-8 py-4 font-['Space_Grotesk'] font-600 text-base transition-all duration-300 glow-blue">

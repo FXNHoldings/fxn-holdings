@@ -1,7 +1,7 @@
 /*
  * FXN Holdings Limited — Global Styles
- * Design Philosophy: Kinetic Blueprint (Constructivist Futurism)
- * Color System: Dark Slate (#0D1B2A) + Electric Blue (#0EA5E9) + Amber Gold (#F59E0B)
+ * Design Philosophy: Kinetic Blueprint (Constructivist Futurism) — Light Theme
+ * Color System: Clean White + Electric Blue (#0EA5E9) + Amber Gold (#F59E0B)
  * Typography: Space Grotesk (display) + Inter (body) + JetBrains Mono (labels)
  */
 
@@ -58,37 +58,38 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.18 0.04 240);
-  --foreground: oklch(0.94 0.01 240);
-  --card: oklch(0.22 0.035 240);
-  --card-foreground: oklch(0.94 0.01 240);
-  --popover: oklch(0.22 0.035 240);
-  --popover-foreground: oklch(0.94 0.01 240);
+  /* Light theme: clean white background with dark text */
+  --background: oklch(0.98 0.001 0);
+  --foreground: oklch(0.235 0.015 65);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.235 0.015 65);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.235 0.015 65);
   --primary: oklch(0.62 0.2 220);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.28 0.04 240);
-  --secondary-foreground: oklch(0.85 0.01 240);
-  --muted: oklch(0.26 0.035 240);
-  --muted-foreground: oklch(0.65 0.02 240);
+  --secondary: oklch(0.93 0.01 240);
+  --secondary-foreground: oklch(0.3 0.02 240);
+  --muted: oklch(0.92 0.01 240);
+  --muted-foreground: oklch(0.45 0.02 240);
   --accent: oklch(0.75 0.17 75);
   --accent-foreground: oklch(0.15 0.03 240);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 12%);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
   --ring: oklch(0.62 0.2 220);
   --chart-1: oklch(0.62 0.2 220);
   --chart-2: oklch(0.75 0.17 75);
   --chart-3: oklch(0.55 0.18 200);
   --chart-4: oklch(0.7 0.15 260);
   --chart-5: oklch(0.65 0.2 180);
-  --sidebar: oklch(0.22 0.035 240);
-  --sidebar-foreground: oklch(0.94 0.01 240);
+  --sidebar: oklch(0.98 0.001 0);
+  --sidebar-foreground: oklch(0.235 0.015 65);
   --sidebar-primary: oklch(0.62 0.2 220);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.28 0.04 240);
-  --sidebar-accent-foreground: oklch(0.94 0.01 240);
-  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-accent: oklch(0.93 0.01 240);
+  --sidebar-accent-foreground: oklch(0.235 0.015 65);
+  --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.62 0.2 220);
 }
 
@@ -145,11 +146,11 @@
     }
   }
 
-  /* Blueprint grid line overlay */
+  /* Blueprint grid line overlay — light theme */
   .blueprint-grid {
     background-image:
-      linear-gradient(oklch(0.62 0.2 220 / 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.62 0.2 220 / 0.05) 1px, transparent 1px);
+      linear-gradient(oklch(0.62 0.2 220 / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.62 0.2 220 / 0.08) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
@@ -192,7 +193,7 @@
   /* Section divider line */
   .section-rule {
     height: 1px;
-    background: linear-gradient(90deg, transparent, oklch(0.62 0.2 220 / 0.6), transparent);
+    background: linear-gradient(90deg, transparent, oklch(0.62 0.2 220 / 0.3), transparent);
   }
 
   /* Card hover effect */
@@ -201,8 +202,8 @@
   }
   .portfolio-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 60px oklch(0.62 0.2 220 / 0.2);
-    border-color: oklch(0.62 0.2 220 / 0.5);
+    box-shadow: 0 20px 60px oklch(0.62 0.2 220 / 0.15);
+    border-color: oklch(0.62 0.2 220 / 0.4);
   }
 
   /* Animated underline for nav */
@@ -233,7 +234,7 @@
 
   /* Glow effect */
   .glow-blue {
-    box-shadow: 0 0 30px oklch(0.62 0.2 220 / 0.3);
+    box-shadow: 0 0 30px oklch(0.62 0.2 220 / 0.2);
   }
 }
 
@@ -242,12 +243,12 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: oklch(0.18 0.04 240);
+  background: oklch(0.98 0.001 0);
 }
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.62 0.2 220 / 0.5);
+  background: oklch(0.62 0.2 220 / 0.4);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.62 0.2 220);
+  background: oklch(0.62 0.2 220 / 0.6);
 }

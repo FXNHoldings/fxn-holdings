@@ -1,6 +1,6 @@
 /*
  * FXN Holdings Limited — App Router
- * Design: Kinetic Blueprint — dark slate, electric blue, amber gold
+ * Design: Kinetic Blueprint (Light) — clean white, electric blue, amber gold
  */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -37,7 +37,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />

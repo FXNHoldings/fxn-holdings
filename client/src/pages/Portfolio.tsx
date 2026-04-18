@@ -144,7 +144,7 @@ export default function Portfolio() {
     <div className="overflow-x-hidden pt-16">
       {/* ── Page Hero ── */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[oklch(0.14_0.04_240)]" />
+        <div className="absolute inset-0 bg-white" />
         <div className="absolute inset-0 blueprint-grid opacity-20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[oklch(0.62_0.2_220/0.05)] blur-3xl" />
         <div className="relative container text-center">
@@ -159,13 +159,13 @@ export default function Portfolio() {
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
             </div>
             <h1
-              className="font-['Space_Grotesk'] font-700 text-white leading-tight mb-6"
+              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
             >
               Our Digital{" "}
               <span className="text-gradient-blue">Web Portfolio</span>
             </h1>
-            <p className="text-[oklch(0.75_0.02_240)] text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[oklch(0.45_0.02_240)] text-lg max-w-2xl mx-auto leading-relaxed">
               Five distinct digital verticals, each managed with the same commitment to quality, performance, and sustainable growth. Explore the web properties that make up the FXN Holdings portfolio.
             </p>
           </motion.div>
@@ -177,7 +177,7 @@ export default function Portfolio() {
         <section
           key={v.id}
           id={v.id}
-          className={`py-20 relative ${i % 2 === 1 ? "bg-[oklch(0.16_0.038_240)]" : ""}`}
+          className={`py-20 relative ${i % 2 === 1 ? "bg-[oklch(0.96_0.002_240)]" : ""}`}
         >
           <div className="absolute inset-0 blueprint-grid opacity-8" />
           <div className="relative container">
@@ -207,9 +207,9 @@ export default function Portfolio() {
                   </div>
                 </div>
                 {/* Stats bar */}
-                <div className="grid grid-cols-3 border border-white/10 border-t-0">
+                <div className="grid grid-cols-3 border border-[oklch(0.92_0.004_286.32)] border-t-0">
                   {v.stats.map((stat) => (
-                    <div key={stat.label} className="p-4 border-r border-white/10 last:border-r-0 text-center">
+                    <div key={stat.label} className="p-4 border-r border-[oklch(0.92_0.004_286.32)] last:border-r-0 text-center">
                       <div
                         className="font-['Space_Grotesk'] font-700 text-lg mb-1"
                         style={{ color: v.color }}
@@ -239,7 +239,7 @@ export default function Portfolio() {
                   </span>
                 </div>
                 <h2
-                  className="font-['Space_Grotesk'] font-700 text-white leading-tight mb-2"
+                  className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-2"
                   style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}
                 >
                   {v.title}
@@ -281,7 +281,7 @@ export default function Portfolio() {
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
             </div>
             <h2
-              className="font-['Space_Grotesk'] font-700 text-white leading-tight"
+              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               Our Portfolio Approach
@@ -296,7 +296,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.5 }}
-                className="relative bg-[oklch(0.22_0.035_240)] border border-white/10 p-8 text-center"
+                className="relative bg-white border border-[oklch(0.92_0.004_286.32)] p-8 text-center"
               >
                 <div className="absolute top-4 right-4 mono-label text-[oklch(0.3_0.02_240)] text-2xl font-700">
                   0{i + 1}
@@ -304,10 +304,10 @@ export default function Portfolio() {
                 <div className="w-14 h-14 bg-[oklch(0.62_0.2_220/0.12)] flex items-center justify-center mx-auto mb-5">
                   <item.icon className="w-7 h-7 text-[oklch(0.62_0.2_220)]" />
                 </div>
-                <h3 className="font-['Space_Grotesk'] font-600 text-white text-xl mb-3">
+                <h3 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-xl mb-3">
                   {item.title}
                 </h3>
-                <p className="text-[oklch(0.65_0.02_240)] text-sm leading-relaxed">
+                <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -329,16 +329,16 @@ export default function Portfolio() {
             transition={{ duration: 0.6 }}
           >
             <h2
-              className="font-['Space_Grotesk'] font-700 text-white leading-tight mb-4"
+              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               Interested in Advertising<br />on Our Platforms?
             </h2>
-            <p className="text-[oklch(0.65_0.02_240)] text-base max-w-lg mx-auto mb-8">
+            <p className="text-[oklch(0.45_0.02_240)] text-base max-w-lg mx-auto mb-8">
               Reach highly targeted audiences across our portfolio of ecommerce, travel, content, and affiliate websites. Get in touch to discuss advertising and partnership opportunities.
             </p>
             <Link href="/contact">
-              <button className="group inline-flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-white px-8 py-4 font-['Space_Grotesk'] font-600 text-base transition-all duration-300 glow-blue">
+              <button className="group inline-flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-[oklch(0.235_0.015_65)] px-8 py-4 font-['Space_Grotesk'] font-600 text-base transition-all duration-300 glow-blue">
                 Get in Touch
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
