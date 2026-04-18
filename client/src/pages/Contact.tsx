@@ -79,7 +79,7 @@ export default function Contact() {
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
             </div>
             <h1
-              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
+              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
             >
               Contact{" "}
@@ -105,7 +105,7 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-1"
             >
-              <h2 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-2xl mb-6">
+              <h2 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-2xl mb-6">
                 Company Information
               </h2>
 
@@ -189,7 +189,7 @@ export default function Contact() {
               {submitted ? (
                 <div className="bg-white border border-[oklch(0.62_0.2_220/0.4)] p-12 text-center h-full flex flex-col items-center justify-center">
                   <CheckCircle className="w-16 h-16 text-[oklch(0.62_0.2_220)] mb-6" />
-                  <h3 className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] text-2xl mb-3">
+                  <h3 className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] text-2xl mb-3">
                     Message Sent!
                   </h3>
                   <p className="text-[oklch(0.45_0.02_240)] text-base max-w-sm">
@@ -201,7 +201,7 @@ export default function Contact() {
                   onSubmit={handleSubmit}
                   className="bg-white border border-[oklch(0.92_0.004_286.32)] p-8"
                 >
-                  <h2 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-2xl mb-6">
+                  <h2 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-2xl mb-6">
                     Send Us a Message
                   </h2>
 
@@ -282,7 +282,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="group w-full flex items-center justify-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-[oklch(0.235_0.015_65)] py-4 font-['Space_Grotesk'] font-600 text-sm transition-all duration-300 glow-blue"
+                    className="group w-full flex items-center justify-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-[oklch(0.235_0.015_65)] py-4 font-['Urbanist'] font-600 text-sm transition-all duration-300 glow-blue"
                   >
                     Send Message
                     <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -314,7 +314,7 @@ export default function Contact() {
               <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">FAQ</span>
             </div>
             <h2
-              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
+              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               Frequently Asked Questions
@@ -335,7 +335,7 @@ export default function Contact() {
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between px-6 py-4 text-left"
                 >
-                  <span className="font-['Space_Grotesk'] font-500 text-[oklch(0.235_0.015_65)] text-sm pr-4">
+                  <span className="font-['Urbanist'] font-500 text-[oklch(0.235_0.015_65)] text-sm pr-4">
                     {faq.q}
                   </span>
                   <span

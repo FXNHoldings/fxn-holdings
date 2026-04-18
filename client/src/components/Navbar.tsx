@@ -47,7 +47,7 @@ export default function Navbar() {
                 <Globe className="w-5 h-5 text-white" />
               </div>
               <div>
-                <span className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] text-lg leading-none tracking-tight">
+                <span className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] text-lg leading-none tracking-tight">
                   FXN<span className="text-[oklch(0.62_0.2_220)]"> Holdings</span>
                 </span>
                 <p className="mono-label text-[oklch(0.45_0.02_240)] text-[10px] leading-none mt-0.5">
@@ -62,7 +62,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 <span
-                  className={`nav-link font-['Space_Grotesk'] font-500 text-sm transition-colors duration-200 ${
+                  className={`nav-link font-['Urbanist'] font-500 text-sm transition-colors duration-200 ${
                     location === link.href
                       ? "text-[oklch(0.62_0.2_220)] active"
                       : "text-[oklch(0.45_0.02_240)] hover:text-[oklch(0.235_0.015_65)]"
@@ -73,7 +73,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link href="/contact">
-              <button className="btn-fill border border-[oklch(0.62_0.2_220)] text-[oklch(0.62_0.2_220)] hover:text-white px-5 py-2 text-sm font-['Space_Grotesk'] font-600 transition-all duration-300">
+              <button className="btn-fill border border-[oklch(0.62_0.2_220)] text-[oklch(0.62_0.2_220)] hover:text-white px-5 py-2 text-sm font-['Urbanist'] font-600 transition-all duration-300">
                 <span>Get in Touch</span>
               </button>
             </Link>
@@ -104,7 +104,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className={`block font-['Space_Grotesk'] font-500 text-base py-2 border-b border-[oklch(0.92_0.004_286.32)] transition-colors ${
+                    className={`block font-['Urbanist'] font-500 text-base py-2 border-b border-[oklch(0.92_0.004_286.32)] transition-colors ${
                       location === link.href
                         ? "text-[oklch(0.62_0.2_220)]"
                         : "text-[oklch(0.45_0.02_240)]"
@@ -115,7 +115,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link href="/contact">
-                <button className="w-full mt-2 border border-[oklch(0.62_0.2_220)] text-[oklch(0.62_0.2_220)] px-5 py-3 text-sm font-['Space_Grotesk'] font-600">
+                <button className="w-full mt-2 border border-[oklch(0.62_0.2_220)] text-[oklch(0.62_0.2_220)] px-5 py-3 text-sm font-['Urbanist'] font-600">
                   Get in Touch
                 </button>
               </Link>

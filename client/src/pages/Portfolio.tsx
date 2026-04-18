@@ -159,7 +159,7 @@ export default function Portfolio() {
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
             </div>
             <h1
-              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
+              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
             >
               Our Digital{" "}
@@ -211,7 +211,7 @@ export default function Portfolio() {
                   {v.stats.map((stat) => (
                     <div key={stat.label} className="p-4 border-r border-[oklch(0.92_0.004_286.32)] last:border-r-0 text-center">
                       <div
-                        className="font-['Space_Grotesk'] font-700 text-lg mb-1"
+                        className="font-['Urbanist'] font-700 text-lg mb-1"
                         style={{ color: v.color }}
                       >
                         {stat.value}
@@ -239,12 +239,12 @@ export default function Portfolio() {
                   </span>
                 </div>
                 <h2
-                  className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-2"
+                  className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-2"
                   style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}
                 >
                   {v.title}
                 </h2>
-                <p className="font-['Space_Grotesk'] font-400 mb-4" style={{ color: v.color }}>
+                <p className="font-['Urbanist'] font-400 mb-4" style={{ color: v.color }}>
                   {v.subtitle}
                 </p>
                 <p className="text-[oklch(0.72_0.02_240)] text-sm leading-relaxed mb-6">
@@ -281,7 +281,7 @@ export default function Portfolio() {
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
             </div>
             <h2
-              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
+              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               Our Portfolio Approach
@@ -304,7 +304,7 @@ export default function Portfolio() {
                 <div className="w-14 h-14 bg-[oklch(0.62_0.2_220/0.12)] flex items-center justify-center mx-auto mb-5">
                   <item.icon className="w-7 h-7 text-[oklch(0.62_0.2_220)]" />
                 </div>
-                <h3 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-xl mb-3">
+                <h3 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-xl mb-3">
                   {item.title}
                 </h3>
                 <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed">
@@ -329,7 +329,7 @@ export default function Portfolio() {
             transition={{ duration: 0.6 }}
           >
             <h2
-              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4"
+              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               Interested in Advertising<br />on Our Platforms?
@@ -338,7 +338,7 @@ export default function Portfolio() {
               Reach highly targeted audiences across our portfolio of ecommerce, travel, content, and affiliate websites. Get in touch to discuss advertising and partnership opportunities.
             </p>
             <Link href="/contact">
-              <button className="group inline-flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-[oklch(0.235_0.015_65)] px-8 py-4 font-['Space_Grotesk'] font-600 text-base transition-all duration-300 glow-blue">
+              <button className="group inline-flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-[oklch(0.235_0.015_65)] px-8 py-4 font-['Urbanist'] font-600 text-base transition-all duration-300 glow-blue">
                 Get in Touch
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>

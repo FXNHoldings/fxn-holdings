@@ -2,7 +2,7 @@
  * FXN Holdings Limited — Global Styles
  * Design Philosophy: Kinetic Blueprint (Constructivist Futurism) — Light Theme
  * Color System: Clean White + Electric Blue (#0EA5E9) + Amber Gold (#F59E0B)
- * Typography: Space Grotesk (display) + Inter (body) + JetBrains Mono (labels)
+ * Typography: Urbanist (headings, weight 700) + Outfit (body, weight 300) + JetBrains Mono (labels)
  */
 
 @import "tailwindcss";
@@ -99,10 +99,12 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),

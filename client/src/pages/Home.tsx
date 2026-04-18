@@ -162,7 +162,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-[1.05] mb-6"
+              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-[1.05] mb-6"
               style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
             >
               Building the{" "}
@@ -187,13 +187,13 @@ export default function Home() {
               className="flex flex-wrap gap-4"
             >
               <Link href="/portfolio">
-                <button className="group flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-white px-7 py-3.5 font-['Space_Grotesk'] font-600 text-sm transition-all duration-300 glow-blue">
+                <button className="group flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-white px-7 py-3.5 font-['Urbanist'] font-600 text-sm transition-all duration-300 glow-blue">
                   Explore Our Portfolio
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
               <Link href="/about">
-                <button className="flex items-center gap-2 border border-[oklch(0.235_0.015_65)] text-[oklch(0.235_0.015_65)] hover:border-[oklch(0.62_0.2_220)] hover:text-[oklch(0.62_0.2_220)] px-7 py-3.5 font-['Space_Grotesk'] font-600 text-sm transition-all duration-300">
+                <button className="flex items-center gap-2 border border-[oklch(0.235_0.015_65)] text-[oklch(0.235_0.015_65)] hover:border-[oklch(0.62_0.2_220)] hover:text-[oklch(0.62_0.2_220)] px-7 py-3.5 font-['Urbanist'] font-600 text-sm transition-all duration-300">
                   About FXN Holdings
                 </button>
               </Link>
@@ -232,7 +232,7 @@ export default function Home() {
                 className="text-center"
               >
                 <stat.icon className="w-6 h-6 text-[oklch(0.62_0.2_220)] mx-auto mb-3" />
-                <div className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] mb-1" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+                <div className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] mb-1" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
                 <p className="mono-label text-[oklch(0.55_0.02_240)] text-xs">{stat.label}</p>
@@ -258,7 +258,7 @@ export default function Home() {
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
               <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">OUR PORTFOLIO</span>
             </div>
-            <h2 className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               Five Digital Verticals,<br />
               <span className="text-gradient-blue">One Holding Company</span>
             </h2>
@@ -299,7 +299,7 @@ export default function Home() {
 
                 {/* Card content */}
                 <div className="p-6 gold-border-left">
-                  <h3 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-lg mb-3">
+                  <h3 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-lg mb-3">
                     {item.title}
                   </h3>
                   <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed mb-4">
@@ -328,7 +328,7 @@ export default function Home() {
             className="mt-10 text-center"
           >
             <Link href="/portfolio">
-              <button className="group inline-flex items-center gap-2 border border-[oklch(0.62_0.2_220)] text-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.62_0.2_220)] hover:text-white px-8 py-3.5 font-['Space_Grotesk'] font-600 text-sm transition-all duration-300">
+              <button className="group inline-flex items-center gap-2 border border-[oklch(0.62_0.2_220)] text-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.62_0.2_220)] hover:text-white px-8 py-3.5 font-['Urbanist'] font-600 text-sm transition-all duration-300">
                 View Full Portfolio
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -352,7 +352,7 @@ export default function Home() {
                 <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
                 <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">ABOUT US</span>
               </div>
-              <h2 className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+              <h2 className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
                 A UK Digital Company<br />
                 <span className="text-gradient-blue">Built for Scale</span>
               </h2>
@@ -363,7 +363,7 @@ export default function Home() {
                 Our team combines expertise in digital marketing, web development, SEO, content strategy, and affiliate marketing to create web properties that rank, convert, and grow.
               </p>
               <Link href="/about">
-                <button className="group flex items-center gap-2 bg-[oklch(0.75_0.17_75)] hover:bg-[oklch(0.68_0.18_75)] text-[oklch(0.14_0.04_240)] px-7 py-3.5 font-['Space_Grotesk'] font-700 text-sm transition-all duration-300">
+                <button className="group flex items-center gap-2 bg-[oklch(0.75_0.17_75)] hover:bg-[oklch(0.68_0.18_75)] text-[oklch(0.14_0.04_240)] px-7 py-3.5 font-['Urbanist'] font-700 text-sm transition-all duration-300">
                   Learn More About FXN
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -389,7 +389,7 @@ export default function Home() {
               <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">WHY FXN HOLDINGS</span>
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
             </div>
-            <h2 className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               What Sets Us Apart
             </h2>
           </motion.div>
@@ -407,7 +407,7 @@ export default function Home() {
                 <div className="w-10 h-10 bg-[oklch(0.62_0.2_220/0.08)] flex items-center justify-center mb-4 group-hover:bg-[oklch(0.62_0.2_220/0.15)] transition-colors">
                   <item.icon className="w-5 h-5 text-[oklch(0.62_0.2_220)]" />
                 </div>
-                <h3 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-base mb-2">
+                <h3 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-base mb-2">
                   {item.title}
                 </h3>
                 <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed">
@@ -431,14 +431,14 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h2 className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               Interested in Partnering<br />with FXN Holdings?
             </h2>
             <p className="text-[oklch(0.45_0.02_240)] text-base max-w-lg mx-auto mb-8">
               Whether you're looking to collaborate, advertise, or explore acquisition opportunities, we'd love to hear from you.
             </p>
             <Link href="/contact">
-              <button className="group inline-flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-white px-8 py-4 font-['Space_Grotesk'] font-600 text-base transition-all duration-300 glow-blue">
+              <button className="group inline-flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-white px-8 py-4 font-['Urbanist'] font-600 text-base transition-all duration-300 glow-blue">
                 Contact Us Today
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>

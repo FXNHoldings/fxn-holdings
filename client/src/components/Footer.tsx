@@ -34,7 +34,7 @@ export default function Footer() {
                 <Globe className="w-5 h-5 text-white" />
               </div>
               <div>
-                <span className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] text-xl leading-none">
+                <span className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] text-xl leading-none">
                   FXN<span className="text-[oklch(0.62_0.2_220)]"> Holdings</span>
                 </span>
                 <p className="mono-label text-[oklch(0.45_0.02_240)] text-[10px] leading-none mt-0.5">
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Portfolio Links */}
           <div>
-            <h4 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-sm mb-5 flex items-center gap-2">
+            <h4 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-sm mb-5 flex items-center gap-2">
               <span className="w-4 h-px bg-[oklch(0.75_0.17_75)]" />
               Our Portfolio
             </h4>
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-sm mb-5 flex items-center gap-2">
+            <h4 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-sm mb-5 flex items-center gap-2">
               <span className="w-4 h-px bg-[oklch(0.75_0.17_75)]" />
               Company
             </h4>
@@ -111,7 +111,7 @@ export default function Footer() {
             </ul>
 
             <div className="mt-8">
-              <h4 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-sm mb-3 flex items-center gap-2">
+              <h4 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-sm mb-3 flex items-center gap-2">
                 <span className="w-4 h-px bg-[oklch(0.75_0.17_75)]" />
                 Legal
               </h4>

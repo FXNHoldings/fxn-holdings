@@ -74,7 +74,7 @@ export default function About() {
               <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
             </div>
             <h1
-              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
+              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
             >
               Who We Are
@@ -102,7 +102,7 @@ export default function About() {
                 <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">OUR MISSION</span>
               </div>
               <h2
-                className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
+                className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
                 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)" }}
               >
                 Building Digital Businesses That{" "}
@@ -133,7 +133,7 @@ export default function About() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Globe className="w-6 h-6 text-[oklch(0.62_0.2_220)]" />
-                <h3 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-xl">
+                <h3 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-xl">
                   UK Registered Company
                 </h3>
               </div>
@@ -169,7 +169,7 @@ export default function About() {
               <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">OUR VALUES</span>
             </div>
             <h2
-              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
+              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               The Principles That Guide Us
@@ -189,7 +189,7 @@ export default function About() {
                 <div className="w-12 h-12 bg-[oklch(0.62_0.2_220/0.12)] flex items-center justify-center mb-5 group-hover:bg-[oklch(0.62_0.2_220/0.22)] transition-colors">
                   <val.icon className="w-6 h-6 text-[oklch(0.62_0.2_220)]" />
                 </div>
-                <h3 className="font-['Space_Grotesk'] font-600 text-[oklch(0.235_0.015_65)] text-xl mb-3">
+                <h3 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-xl mb-3">
                   {val.title}
                 </h3>
                 <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed">
@@ -217,7 +217,7 @@ export default function About() {
               <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">OUR JOURNEY</span>
             </div>
             <h2
-              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
+              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               Company Milestones
@@ -267,7 +267,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <h2
-              className="font-['Space_Grotesk'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4"
+              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               Want to Know More?
@@ -277,13 +277,13 @@ export default function About() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/portfolio">
-                <button className="group inline-flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-[oklch(0.235_0.015_65)] px-7 py-3.5 font-['Space_Grotesk'] font-600 text-sm transition-all duration-300">
+                <button className="group inline-flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-[oklch(0.235_0.015_65)] px-7 py-3.5 font-['Urbanist'] font-600 text-sm transition-all duration-300">
                   View Our Portfolio
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="inline-flex items-center gap-2 border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] hover:border-[oklch(0.62_0.2_220)] hover:text-[oklch(0.62_0.2_220)] px-7 py-3.5 font-['Space_Grotesk'] font-600 text-sm transition-all duration-300">
+                <button className="inline-flex items-center gap-2 border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] hover:border-[oklch(0.62_0.2_220)] hover:text-[oklch(0.62_0.2_220)] px-7 py-3.5 font-['Urbanist'] font-600 text-sm transition-all duration-300">
                   Contact Us
                 </button>
               </Link>
