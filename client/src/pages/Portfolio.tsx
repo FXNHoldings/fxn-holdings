@@ -160,7 +160,7 @@ export default function Portfolio() {
             </div>
             <h1
               className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
-              style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
+              style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)" }}
             >
               Our Digital{" "}
               <span className="text-gradient-blue">Web Portfolio</span>
@@ -240,7 +240,7 @@ export default function Portfolio() {
                 </div>
                 <h2
                   className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-2"
-                  style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}
+                  style={{ fontSize: "clamp(1.2rem, 2vw, 1.8rem)" }}
                 >
                   {v.title}
                 </h2>

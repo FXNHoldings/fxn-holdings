@@ -80,7 +80,7 @@ export default function Contact() {
             </div>
             <h1
               className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
-              style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
+              style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)" }}
             >
               Contact{" "}
               <span className="text-gradient-blue">FXN Holdings</span>

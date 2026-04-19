@@ -163,7 +163,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-[1.05] mb-6"
-              style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
+              style={{ fontSize: "clamp(1.5rem, 4vw, 2.8rem)" }}
             >
               Building the{" "}
               <span className="text-gradient-blue">Digital Future</span>
