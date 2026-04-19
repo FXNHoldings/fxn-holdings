@@ -105,17 +105,17 @@
   h1 {
     font-family: 'Urbanist', sans-serif;
     font-weight: 700;
-    font-size: 2.4rem; /* reduced 20% from 3rem */
+    font-size: 1.8rem; /* further reduced to 1.8rem */
   }
   h2 {
     font-family: 'Urbanist', sans-serif;
     font-weight: 700;
-    font-size: 1.92rem; /* reduced 20% from 2.4rem */
+    font-size: 1.44rem; /* further reduced to 1.44rem */
   }
   h3 {
     font-family: 'Urbanist', sans-serif;
     font-weight: 700;
-    font-size: 1.536rem; /* reduced 20% from 1.92rem */
+    font-size: 1.152rem; /* further reduced to 1.152rem */
   }
   h4, h5, h6 {
     font-family: 'Urbanist', sans-serif;
