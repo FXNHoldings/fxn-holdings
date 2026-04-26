@@ -46,7 +46,7 @@ const portfolioItems = [
     title: "Online Retail Platforms",
     description:
       "We build and operate high-converting ecommerce stores across multiple niches — from fashion and electronics to health and lifestyle products. Our platforms are optimised for SEO, mobile performance, and conversion.",
-    image: "/manus-storage/ecommerce_card_50fd5dab.jpg",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop",
     color: "oklch(0.62 0.2 220)",
     tags: ["Shopify", "WooCommerce", "Conversion Optimisation"],
   },
@@ -57,7 +57,7 @@ const portfolioItems = [
     title: "Travel & Booking Websites",
     description:
       "Our travel portfolio includes destination guides, hotel comparison tools, flight aggregators, and holiday package platforms. We connect travellers with the best deals through smart affiliate partnerships.",
-    image: "/manus-storage/travel_card_a37a6ea4.jpg",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80&auto=format&fit=crop",
     color: "oklch(0.75 0.17 75)",
     tags: ["Booking APIs", "Destination Guides", "Travel Affiliate"],
   },
@@ -68,7 +68,7 @@ const portfolioItems = [
     title: "Content & Blog Networks",
     description:
       "We manage a network of authoritative content websites and blogs covering lifestyle, technology, finance, health, and more. Each property is built on a foundation of high-quality, SEO-optimised editorial content.",
-    image: "/manus-storage/blog_content_card_5eceb4cb.jpg",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80&auto=format&fit=crop",
     color: "oklch(0.68 0.18 160)",
     tags: ["SEO Content", "Editorial Strategy", "Audience Growth"],
   },
@@ -79,7 +79,7 @@ const portfolioItems = [
     title: "Product Price Comparison",
     description:
       "Our price comparison platforms help consumers find the best deals across thousands of products and services. We aggregate data from hundreds of retailers in real time to deliver accurate, up-to-date pricing intelligence.",
-    image: "/manus-storage/price_comparison_card_1bc52a83.jpg",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop",
     color: "oklch(0.7 0.18 280)",
     tags: ["Data Aggregation", "Real-Time Pricing", "Consumer Tools"],
   },
@@ -90,7 +90,7 @@ const portfolioItems = [
     title: "Affiliate Marketing Networks",
     description:
       "We operate a growing portfolio of affiliate websites that generate revenue through strategic partnerships with leading brands. Our data-driven approach maximises click-through rates and commission earnings across every vertical.",
-    image: "/manus-storage/affiliate_card_b0d66016.jpg",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80&auto=format&fit=crop",
     color: "oklch(0.72 0.16 120)",
     tags: ["Performance Marketing", "CPA Networks", "Revenue Optimisation"],
   },

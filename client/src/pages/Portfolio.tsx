@@ -19,7 +19,7 @@ const verticals = [
     subtitle: "Online Retail at Scale",
     description:
       "Our ecommerce portfolio comprises multiple online retail stores spanning diverse product categories. Each platform is built on proven ecommerce technology, optimised for search engine visibility, and designed to convert browsers into buyers.",
-    image: "/manus-storage/ecommerce_card_50fd5dab.jpg",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop",
     color: "oklch(0.62 0.2 220)",
     features: [
       "Multi-category product catalogues",
@@ -43,7 +43,7 @@ const verticals = [
     subtitle: "Inspiring Journeys, Driving Bookings",
     description:
       "Our travel portfolio connects millions of travellers with the best destinations, hotels, flights, and holiday packages. We partner with leading travel affiliate networks to deliver competitive pricing and real-time availability across our platforms.",
-    image: "/manus-storage/travel_card_a37a6ea4.jpg",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80&auto=format&fit=crop",
     color: "oklch(0.75 0.17 75)",
     features: [
       "Destination guides and travel inspiration",
@@ -67,7 +67,7 @@ const verticals = [
     subtitle: "Authority Content That Ranks",
     description:
       "Our content network spans multiple high-authority blogs covering lifestyle, technology, finance, health, food, and travel. Each publication is built on a foundation of expert-written, SEO-optimised content designed to rank on Google and engage loyal audiences.",
-    image: "/manus-storage/blog_content_card_5eceb4cb.jpg",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80&auto=format&fit=crop",
     color: "oklch(0.68 0.18 160)",
     features: [
       "Expert-written, fact-checked articles",
@@ -91,7 +91,7 @@ const verticals = [
     subtitle: "Helping Consumers Find the Best Deals",
     description:
       "Our price comparison websites aggregate product and service pricing from hundreds of UK and international retailers. We empower consumers to make informed purchasing decisions by presenting clear, accurate, and up-to-date price data across multiple categories.",
-    image: "/manus-storage/price_comparison_card_1bc52a83.jpg",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop",
     color: "oklch(0.7 0.18 280)",
     features: [
       "Real-time price data aggregation",
@@ -115,7 +115,7 @@ const verticals = [
     subtitle: "Performance Marketing That Converts",
     description:
       "Our affiliate portfolio is a network of niche websites that generate revenue through strategic partnerships with leading brands and affiliate networks. We use data-driven content strategies and technical SEO to drive high-intent traffic that converts.",
-    image: "/manus-storage/affiliate_card_b0d66016.jpg",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80&auto=format&fit=crop",
     color: "oklch(0.72 0.16 120)",
     features: [
       "Niche-specific product review sites",

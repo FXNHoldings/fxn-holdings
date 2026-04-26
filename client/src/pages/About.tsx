@@ -55,7 +55,7 @@ export default function About() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/manus-storage/about_section_a8a5c840.jpg"
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80&auto=format&fit=crop"
             alt="FXN Holdings team in London office"
             className="w-full h-full object-cover"
           />
