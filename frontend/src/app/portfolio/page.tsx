@@ -1,353 +1,168 @@
 /*
- * FXN Holdings — Portfolio Page
- * Design: Kinetic Blueprint — dark slate, electric blue, amber gold
- * Sections: Hero, 5 vertical deep-dives, approach
+ * FXN Holdings — Portfolio
+ * Corporate / institutional redesign (navy + emerald).
  */
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 import {
-  ShoppingCart, Plane, FileText, BarChart2, Link2,
-  ArrowRight, CheckCircle, TrendingUp, Users, Globe
+  ArrowRight, Check, ShoppingBag, Plane, Newspaper, BarChart3, Network,
+  Search, Wrench, TrendingUp,
 } from "lucide-react";
 
 const verticals = [
   {
-    id: "ecommerce",
-    icon: ShoppingCart,
-    label: "VERTICAL 01",
-    title: "E-Commerce Platforms",
-    subtitle: "Online Retail at Scale",
+    id: "ecommerce", no: "01", icon: ShoppingBag,
+    name: "E-Commerce Platforms", subtitle: "Online retail at scale",
     description:
-      "Our ecommerce portfolio comprises multiple online retail stores spanning diverse product categories. Each platform is built on proven ecommerce technology, optimised for search engine visibility, and designed to convert browsers into buyers.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop",
-    color: "oklch(0.62 0.2 220)",
-    features: [
-      "Multi-category product catalogues",
-      "Mobile-first responsive design",
-      "SEO-optimised product pages",
-      "Integrated payment processing",
-      "Automated inventory management",
-      "Customer review and rating systems",
-    ],
-    stats: [
-      { label: "Avg. Conversion Rate", value: "3.2%" },
-      { label: "Mobile Traffic Share", value: "68%" },
-      { label: "Product Categories", value: "20+" },
-    ],
+      "A portfolio of online retail stores spanning diverse product categories, each built on proven commerce technology, optimised for search visibility, and engineered to convert browsers into buyers.",
+    features: ["Multi-category catalogues", "Mobile-first design", "SEO-optimised product pages", "Integrated payments", "Automated inventory", "Reviews & ratings"],
+    stats: [["3.2%", "Avg. conversion"], ["68%", "Mobile traffic"], ["20+", "Categories"]],
   },
   {
-    id: "travel",
-    icon: Plane,
-    label: "VERTICAL 02",
-    title: "Travel & Booking Websites",
-    subtitle: "Inspiring Journeys, Driving Bookings",
+    id: "travel", no: "02", icon: Plane,
+    name: "Travel & Booking", subtitle: "Inspiring journeys, driving bookings",
     description:
-      "Our travel portfolio connects millions of travellers with the best destinations, hotels, flights, and holiday packages. We partner with leading travel affiliate networks to deliver competitive pricing and real-time availability across our platforms.",
-    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80&auto=format&fit=crop",
-    color: "oklch(0.75 0.17 75)",
-    features: [
-      "Destination guides and travel inspiration",
-      "Hotel and accommodation comparison",
-      "Flight search and booking integration",
-      "Holiday package aggregation",
-      "Travel tips and itinerary planning",
-      "User reviews and ratings",
-    ],
-    stats: [
-      { label: "Destinations Covered", value: "500+" },
-      { label: "Affiliate Partners", value: "30+" },
-      { label: "Monthly Searches", value: "50K+" },
-    ],
+      "Travel properties that connect millions of travellers with destinations, hotels, flights, and holiday packages — partnered with leading affiliate networks for competitive pricing and real-time availability.",
+    features: ["Destination guides", "Hotel comparison", "Flight search integration", "Holiday package aggregation", "Itinerary planning", "User reviews"],
+    stats: [["500+", "Destinations"], ["30+", "Affiliate partners"], ["50K+", "Monthly searches"]],
   },
   {
-    id: "blogs",
-    icon: FileText,
-    label: "VERTICAL 03",
-    title: "Blog & Content Networks",
-    subtitle: "Authority Content That Ranks",
+    id: "content", no: "03", icon: Newspaper,
+    name: "Content & Publishing", subtitle: "Authority content that ranks",
     description:
-      "Our content network spans multiple high-authority blogs covering lifestyle, technology, finance, health, food, and travel. Each publication is built on a foundation of expert-written, SEO-optimised content designed to rank on Google and engage loyal audiences.",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80&auto=format&fit=crop",
-    color: "oklch(0.68 0.18 160)",
-    features: [
-      "Expert-written, fact-checked articles",
-      "Long-form SEO content strategy",
-      "Topic cluster and pillar page architecture",
-      "Email newsletter and subscriber management",
-      "Social media content distribution",
-      "Display advertising and sponsored content",
-    ],
-    stats: [
-      { label: "Active Blog Properties", value: "5+" },
-      { label: "Articles Published", value: "1,000+" },
-      { label: "Avg. Domain Authority", value: "35+" },
-    ],
+      "A network of high-authority publications across lifestyle, technology, finance, health, and travel — built on expert-written, SEO-optimised editorial designed to rank on Google and retain loyal audiences.",
+    features: ["Expert, fact-checked articles", "Long-form SEO strategy", "Topic-cluster architecture", "Newsletter & subscribers", "Social distribution", "Sponsored content"],
+    stats: [["5+", "Active properties"], ["1,000+", "Articles published"], ["35+", "Avg. domain authority"]],
   },
   {
-    id: "comparison",
-    icon: BarChart2,
-    label: "VERTICAL 04",
-    title: "Price Comparison Platforms",
-    subtitle: "Helping Consumers Find the Best Deals",
+    id: "comparison", no: "04", icon: BarChart3,
+    name: "Price Comparison", subtitle: "Helping consumers decide",
     description:
-      "Our price comparison websites aggregate product and service pricing from hundreds of UK and international retailers. We empower consumers to make informed purchasing decisions by presenting clear, accurate, and up-to-date price data across multiple categories.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop",
-    color: "oklch(0.7 0.18 280)",
-    features: [
-      "Real-time price data aggregation",
-      "Multi-retailer product comparison",
-      "Price history tracking and alerts",
-      "Deal and discount discovery",
-      "User-friendly comparison tables",
-      "Affiliate commission on referred purchases",
-    ],
-    stats: [
-      { label: "Products Tracked", value: "100K+" },
-      { label: "Retail Partners", value: "200+" },
-      { label: "Price Updates Daily", value: "500K+" },
-    ],
+      "Comparison platforms that aggregate product and service pricing from hundreds of UK and international retailers, empowering consumers with clear, accurate, and up-to-date price data across categories.",
+    features: ["Real-time aggregation", "Multi-retailer comparison", "Price history & alerts", "Deal discovery", "Clear comparison tables", "Referral commission"],
+    stats: [["100K+", "Products tracked"], ["200+", "Retail partners"], ["500K+", "Daily price updates"]],
   },
   {
-    id: "affiliate",
-    icon: Link2,
-    label: "VERTICAL 05",
-    title: "Affiliate Marketing Networks",
-    subtitle: "Performance Marketing That Converts",
+    id: "affiliate", no: "05", icon: Network,
+    name: "Affiliate & Performance", subtitle: "Performance marketing that converts",
     description:
-      "Our affiliate portfolio is a network of niche websites that generate revenue through strategic partnerships with leading brands and affiliate networks. We use data-driven content strategies and technical SEO to drive high-intent traffic that converts.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80&auto=format&fit=crop",
-    color: "oklch(0.72 0.16 120)",
-    features: [
-      "Niche-specific product review sites",
-      "Comparison and best-of content",
-      "High-intent keyword targeting",
-      "Multi-network affiliate management",
-      "Commission tracking and optimisation",
-      "Seasonal campaign management",
-    ],
-    stats: [
-      { label: "Affiliate Networks", value: "15+" },
-      { label: "Active Campaigns", value: "50+" },
-      { label: "Avg. EPC", value: "£0.85" },
-    ],
+      "A network of niche properties generating revenue through strategic partnerships with leading brands and affiliate networks, using data-led content and technical SEO to drive high-intent, converting traffic.",
+    features: ["Niche review sites", "Comparison & best-of content", "High-intent keywords", "Multi-network management", "Commission optimisation", "Seasonal campaigns"],
+    stats: [["15+", "Affiliate networks"], ["50+", "Active campaigns"], ["£0.85", "Avg. EPC"]],
   },
 ];
 
 const approach = [
-  { icon: TrendingUp, title: "Research & Validate", desc: "We identify high-opportunity niches through extensive keyword research, market analysis, and competitive intelligence before building." },
-  { icon: Globe, title: "Build & Optimise", desc: "Every property is built with technical SEO, performance, and user experience as primary considerations from day one." },
-  { icon: Users, title: "Grow & Monetise", desc: "We scale traffic through content, link building, and paid channels, then monetise through the most appropriate revenue model for each vertical." },
+  { icon: Search, title: "Research & validate", desc: "We identify high-opportunity niches through keyword research, market analysis, and competitive intelligence before committing capital." },
+  { icon: Wrench, title: "Build & optimise", desc: "Every property is built with technical SEO, performance, and user experience as first-order concerns from day one." },
+  { icon: TrendingUp, title: "Grow & monetise", desc: "We scale traffic through content, links, and paid channels, then monetise with the model best suited to each vertical." },
 ];
 
 export default function Portfolio() {
   return (
-    <div className="overflow-x-hidden pt-16">
-      {/* ── Page Hero ── */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-white" />
-        <div className="absolute inset-0 blueprint-grid opacity-20" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[oklch(0.62_0.2_220/0.05)] blur-3xl" />
-        <div className="relative container text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
-              <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">OUR PORTFOLIO</span>
-              <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
-            </div>
-            <h1
-              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
-              style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)" }}
-            >
-              Our Digital{" "}
-              <span className="text-gradient-blue">Web Portfolio</span>
+    <>
+      {/* ── Hero ── */}
+      <section className="border-b border-slate-200 bg-slate-50 pt-36 pb-16 sm:pt-44 sm:pb-20">
+        <div className="container">
+          <Reveal><p className="eyebrow text-emerald-600">Our portfolio</p></Reveal>
+          <Reveal delay={0.05}>
+            <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
+              A diversified portfolio of digital businesses.
             </h1>
-            <p className="text-[oklch(0.45_0.02_240)] text-lg max-w-2xl mx-auto leading-relaxed">
-              Five distinct digital verticals, each managed with the same commitment to quality, performance, and sustainable growth. Explore the web properties that make up the FXN Holdings portfolio.
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
+              Five distinct verticals, each operated to the same standard of
+              quality, performance, and sustainable growth.
             </p>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
       {/* ── Verticals ── */}
       {verticals.map((v, i) => (
-        <section
-          key={v.id}
-          id={v.id}
-          className={`py-20 relative ${i % 2 === 1 ? "bg-[oklch(0.96_0.002_240)]" : ""}`}
-        >
-          <div className="absolute inset-0 blueprint-grid opacity-8" />
-          <div className="relative container">
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
-              {/* Image */}
-              <motion.div
-                initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className={i % 2 === 1 ? "lg:order-2" : ""}
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={v.image}
-                    alt={v.title}
-                    className="w-full h-72 lg:h-96 object-cover"
-                  />
-                  <div
-                    className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5"
-                    style={{ background: `${v.color}22`, border: `1px solid ${v.color}55` }}
-                  >
-                    <v.icon className="w-3.5 h-3.5" style={{ color: v.color }} />
-                    <span className="mono-label text-[10px]" style={{ color: v.color }}>
-                      {v.label}
-                    </span>
-                  </div>
-                </div>
-                {/* Stats bar */}
-                <div className="grid grid-cols-3 border border-[oklch(0.92_0.004_286.32)] border-t-0">
-                  {v.stats.map((stat) => (
-                    <div key={stat.label} className="p-4 border-r border-[oklch(0.92_0.004_286.32)] last:border-r-0 text-center">
-                      <div
-                        className="font-['Urbanist'] font-700 text-lg mb-1"
-                        style={{ color: v.color }}
-                      >
-                        {stat.value}
-                      </div>
-                      <div className="mono-label text-[oklch(0.55_0.02_240)] text-[10px]">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
+        <section key={v.id} id={v.id} className={`scroll-mt-24 py-16 sm:py-20 ${i % 2 === 1 ? "bg-slate-50 border-y border-slate-200" : ""}`}>
+          <div className="container grid items-center gap-12 lg:grid-cols-2">
+            {/* Text */}
+            <Reveal className={i % 2 === 1 ? "lg:order-2" : ""}>
+              <div className="flex items-center gap-3">
+                <span className="grid h-11 w-11 place-items-center rounded-lg bg-emerald-50 text-emerald-600">
+                  <v.icon className="h-5 w-5" />
+                </span>
+                <span className="eyebrow text-slate-400">Vertical {v.no}</span>
+              </div>
+              <h2 className="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">{v.name}</h2>
+              <p className="mt-1.5 font-['Urbanist'] font-semibold text-emerald-600">{v.subtitle}</p>
+              <p className="mt-4 leading-relaxed text-slate-600">{v.description}</p>
+              <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
+                {v.features.map((f) => (
+                  <li key={f} className="flex items-center gap-2.5 text-sm text-slate-700">
+                    <Check className="h-4 w-4 flex-shrink-0 text-emerald-600" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
 
-              {/* Content */}
-              <motion.div
-                initial={{ opacity: 0, x: i % 2 === 0 ? 30 : -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className={i % 2 === 1 ? "lg:order-1" : ""}
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="w-6 h-px" style={{ background: v.color }} />
-                  <span className="mono-label text-xs" style={{ color: v.color }}>
-                    {v.label}
-                  </span>
-                </div>
-                <h2
-                  className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-2"
-                  style={{ fontSize: "clamp(1.2rem, 2vw, 1.8rem)" }}
-                >
-                  {v.title}
-                </h2>
-                <p className="font-['Urbanist'] font-400 mb-4" style={{ color: v.color }}>
-                  {v.subtitle}
-                </p>
-                <p className="text-[oklch(0.72_0.02_240)] text-sm leading-relaxed mb-6">
-                  {v.description}
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {v.features.map((feat) => (
-                    <div key={feat} className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: v.color }} />
-                      <span className="text-[oklch(0.72_0.02_240)] text-sm">{feat}</span>
+            {/* Figures panel */}
+            <Reveal delay={0.1} className={i % 2 === 1 ? "lg:order-1" : ""}>
+              <div className="rounded-2xl bg-navy p-8 sm:p-10">
+                <p className="eyebrow text-emerald-400">By the numbers</p>
+                <div className="mt-6 divide-y divide-white/10">
+                  {v.stats.map(([val, label]) => (
+                    <div key={label} className="flex items-baseline justify-between gap-4 py-4">
+                      <span className="font-['Urbanist'] text-3xl font-bold tracking-tight text-white sm:text-4xl">{val}</span>
+                      <span className="eyebrow text-right text-slate-400">{label}</span>
                     </div>
                   ))}
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </Reveal>
           </div>
         </section>
       ))}
 
-      {/* ── Our Approach ── */}
-      <section className="py-24 relative">
-        <div className="absolute inset-0 blueprint-grid opacity-10" />
-        <div className="relative container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-14"
-          >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
-              <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">HOW WE WORK</span>
-              <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
-            </div>
-            <h2
-              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
-              style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
-            >
-              Our Portfolio Approach
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {approach.map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.5 }}
-                className="relative bg-white border border-[oklch(0.92_0.004_286.32)] p-8 text-center"
-              >
-                <div className="absolute top-4 right-4 mono-label text-[oklch(0.3_0.02_240)] text-2xl font-700">
-                  0{i + 1}
+      {/* ── Approach ── */}
+      <section className="border-t border-slate-200 py-20 sm:py-28">
+        <div className="container">
+          <Reveal className="max-w-2xl">
+            <p className="eyebrow text-emerald-600">How we work</p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our portfolio approach.</h2>
+          </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {approach.map((a, i) => (
+              <Reveal key={a.title} delay={i * 0.08}>
+                <div className="relative h-full rounded-xl border border-slate-200 bg-white p-8">
+                  <span className="eyebrow absolute right-6 top-6 text-slate-300">0{i + 1}</span>
+                  <span className="grid h-12 w-12 place-items-center rounded-lg bg-navy text-white">
+                    <a.icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="mt-5 text-lg font-bold tracking-tight text-slate-900">{a.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{a.desc}</p>
                 </div>
-                <div className="w-14 h-14 bg-[oklch(0.62_0.2_220/0.12)] flex items-center justify-center mx-auto mb-5">
-                  <item.icon className="w-7 h-7 text-[oklch(0.62_0.2_220)]" />
-                </div>
-                <h3 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-xl mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[oklch(0.62_0.2_220/0.08)]" />
-        <div className="absolute inset-0 blueprint-grid opacity-15" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.62_0.2_220/0.5)] to-transparent" />
-        <div className="relative container text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2
-              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-4"
-              style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
-            >
-              Interested in Advertising<br />on Our Platforms?
-            </h2>
-            <p className="text-[oklch(0.45_0.02_240)] text-base max-w-lg mx-auto mb-8">
-              Reach highly targeted audiences across our portfolio of ecommerce, travel, content, and affiliate websites. Get in touch to discuss advertising and partnership opportunities.
-            </p>
-            <Link href="/contact">
-              <button className="group inline-flex items-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-[oklch(0.235_0.015_65)] px-8 py-4 font-['Urbanist'] font-600 text-base transition-all duration-300 glow-blue">
-                Get in Touch
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+      <section className="bg-navy">
+        <div className="container flex flex-col items-start gap-8 py-20 sm:flex-row sm:items-center sm:justify-between sm:py-24">
+          <Reveal>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Advertise across the portfolio.</h2>
+            <p className="mt-3 max-w-xl text-slate-300">Reach targeted audiences across our e-commerce, travel, content, and affiliate properties.</p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Link href="/contact" className="group inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-emerald-400">
+              Get in touch
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
-    </div>
+    </>
   );
 }

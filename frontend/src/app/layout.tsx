@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 import { Toaster } from "@/components/ui/sonner";
 
 const SITE_URL = "https://www.fxnholdings.com";
 const TITLE = "FXN Holdings Limited — UK Digital Holdings Company";
 const DESCRIPTION =
-  "FXN Holdings Limited is a UK-registered digital holding company managing a diverse portfolio of websites including ecommerce, travel, blogs, price comparison, content, and affiliate platforms.";
+  "FXN Holdings Limited is a UK-registered digital holdings company that builds, acquires, and operates a diversified portfolio of online businesses across e-commerce, travel, content, price comparison, and affiliate marketing.";
 const OG_IMAGE =
   "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=630&q=80&auto=format&fit=crop";
 
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: TITLE,
     description:
-      "A UK-registered digital holding company managing a diverse portfolio of ecommerce, travel, blog, price comparison, content, and affiliate websites.",
+      "A UK-registered digital holdings company building, acquiring, and operating a diversified portfolio of digital businesses across commerce, travel, content, and performance marketing.",
     siteName: "FXN Holdings Limited",
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: TITLE }],
   },
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description:
-      "A UK-registered digital holding company managing a diverse portfolio of ecommerce, travel, blog, price comparison, content, and affiliate websites.",
+      "A UK-registered digital holdings company building, acquiring, and operating a diversified portfolio of digital businesses across commerce, travel, content, and performance marketing.",
     images: [OG_IMAGE],
   },
 };
@@ -68,17 +69,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* Google Fonts — Urbanist + Outfit + Space Grotesk + JetBrains Mono.
-            React 19 hoists these <link> tags into <head>. */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* Self-hosted fonts (see globals.css @font-face). Preload the two
+            primary weights to reduce flash-of-unstyled-text. */}
         <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/fonts/Urbanist-Regular.woff2"
           crossOrigin="anonymous"
         />
         <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/fonts/Outfit-Regular.woff2"
+          crossOrigin="anonymous"
         />
         <script
           type="application/ld+json"
@@ -90,6 +95,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
+        <CookieBanner />
       </body>
     </html>
   );

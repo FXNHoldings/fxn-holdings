@@ -1,364 +1,192 @@
 /*
- * FXN Holdings — Contact Page
- * Design: Kinetic Blueprint — dark slate, electric blue, amber gold
- * Sections: Hero, Contact Form, Company Info, FAQ
+ * FXN Holdings — Contact
+ * Corporate / institutional redesign (navy + emerald).
  */
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, Globe, MapPin, Clock, Send, CheckCircle, MessageSquare, Briefcase, HelpCircle } from "lucide-react";
+import Reveal from "@/components/Reveal";
 import { toast } from "sonner";
+import {
+  Mail, Globe, MapPin, Clock, Send, CheckCircle2, Plus,
+  Briefcase, Megaphone, Handshake, HelpCircle,
+} from "lucide-react";
 
-const contactReasons = [
-  { icon: Briefcase, label: "Partnership Enquiry", value: "partnership" },
-  { icon: MessageSquare, label: "Advertising Opportunity", value: "advertising" },
-  { icon: Globe, label: "Website Collaboration", value: "collaboration" },
-  { icon: HelpCircle, label: "General Enquiry", value: "general" },
+const reasons = [
+  { icon: Briefcase, label: "Partnership enquiry", value: "partnership" },
+  { icon: Megaphone, label: "Advertising opportunity", value: "advertising" },
+  { icon: Handshake, label: "Website collaboration", value: "collaboration" },
+  { icon: HelpCircle, label: "General enquiry", value: "general" },
+];
+
+const details = [
+  { icon: Globe, label: "Website", value: "www.fxnholdings.com", href: "https://www.fxnholdings.com" },
+  { icon: Mail, label: "Email", value: "info@fxnholdings.com", href: "mailto:info@fxnholdings.com" },
+  { icon: MapPin, label: "Registered", value: "England & Wales · No. 16134139" },
+  { icon: Clock, label: "Response time", value: "Within 2 business days" },
 ];
 
 const faqs = [
-  {
-    q: "What types of websites does FXN Holdings manage?",
-    a: "FXN Holdings manages a diverse portfolio of digital web properties including ecommerce stores, travel and booking websites, blog and content networks, price comparison platforms, and affiliate marketing websites.",
-  },
-  {
-    q: "Can I advertise on your websites?",
-    a: "Yes, we welcome advertising partnerships across our portfolio. We offer display advertising, sponsored content, and affiliate arrangements. Please use the contact form to discuss your requirements.",
-  },
-  {
-    q: "Is FXN Holdings a registered UK company?",
-    a: "Yes. FXN Holdings Limited is incorporated and registered in England & Wales (Company Number: 16134139). We are also registered with the ICO for data protection purposes (Registration: ZB940664).",
-  },
-  {
-    q: "Do you acquire existing websites?",
-    a: "We are open to acquiring established web properties that align with our portfolio strategy. If you have a website for sale, please get in touch with details of your traffic, revenue, and niche.",
-  },
-  {
-    q: "How can I collaborate with FXN Holdings?",
-    a: "We welcome collaboration opportunities including content partnerships, affiliate arrangements, joint ventures, and technology partnerships. Please reach out via the contact form to start the conversation.",
-  },
+  { q: "What types of websites does FXN Holdings manage?", a: "A diversified portfolio of digital properties — e-commerce stores, travel and booking sites, content and publishing networks, price-comparison platforms, and affiliate marketing websites." },
+  { q: "Can I advertise on your websites?", a: "Yes. We welcome advertising partnerships across the portfolio — display, sponsored content, and affiliate arrangements. Use the form to outline your requirements." },
+  { q: "Is FXN Holdings a registered UK company?", a: "Yes. FXN Holdings Limited is incorporated and registered in England & Wales (Company No. 16134139) and registered with the ICO for data protection (ZB940664)." },
+  { q: "Do you acquire existing websites?", a: "We consider established web properties that fit our portfolio strategy. If you have a site for sale, get in touch with details of traffic, revenue, and niche." },
+  { q: "How can I collaborate with FXN Holdings?", a: "We welcome content partnerships, affiliate arrangements, joint ventures, and technology partnerships. Reach out via the form to start the conversation." },
 ];
 
-export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    reason: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+const inputCls =
+  "w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 transition-colors focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20";
 
-  const handleSubmit = (e: React.FormEvent) => {
+export default function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", company: "", reason: "", message: "" });
+  const [sent, setSent] = useState(false);
+  const [open, setOpen] = useState<number | null>(0);
+
+  const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error("Please fill in all required fields.");
+    if (!form.name || !form.email || !form.message) {
+      toast.error("Please complete all required fields.");
       return;
     }
-    // Simulate form submission
-    setSubmitted(true);
-    toast.success("Message sent! We'll be in touch within 2 business days.");
+    setSent(true);
+    toast.success("Message sent — we'll be in touch within 2 business days.");
   };
 
   return (
-    <div className="overflow-x-hidden pt-16">
-      {/* ── Page Hero ── */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-white" />
-        <div className="absolute inset-0 blueprint-grid opacity-20" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[oklch(0.62_0.2_220/0.06)] blur-3xl" />
-        <div className="relative container text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
-              <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">GET IN TOUCH</span>
-              <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
-            </div>
-            <h1
-              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight mb-6"
-              style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)" }}
-            >
-              Contact{" "}
-              <span className="text-gradient-blue">FXN Holdings</span>
+    <>
+      {/* ── Hero ── */}
+      <section className="border-b border-slate-200 bg-slate-50 pt-36 pb-16 sm:pt-44 sm:pb-20">
+        <div className="container">
+          <Reveal><p className="eyebrow text-emerald-600">Get in touch</p></Reveal>
+          <Reveal delay={0.05}>
+            <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
+              Let&apos;s start a conversation.
             </h1>
-            <p className="text-[oklch(0.45_0.02_240)] text-lg max-w-xl mx-auto leading-relaxed">
-              Whether you&apos;re looking to partner, advertise, or simply learn more about our portfolio, we&apos;d love to hear from you.
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
+              Whether you&apos;re looking to partner, advertise, or learn more about the
+              portfolio, we&apos;d be glad to hear from you.
             </p>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
-      {/* ── Contact Grid ── */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 blueprint-grid opacity-10" />
-        <div className="relative container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-1"
-            >
-              <h2 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-2xl mb-6">
-                Company Information
-              </h2>
-
-              <div className="flex flex-col gap-5 mb-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[oklch(0.62_0.2_220/0.12)] flex items-center justify-center flex-shrink-0">
-                    <Globe className="w-5 h-5 text-[oklch(0.62_0.2_220)]" />
-                  </div>
+      {/* ── Contact grid ── */}
+      <section className="py-20 sm:py-28">
+        <div className="container grid gap-12 lg:grid-cols-[1fr_1.5fr]">
+          {/* Details */}
+          <Reveal>
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">Company information</h2>
+            <ul className="mt-7 space-y-6">
+              {details.map((d) => (
+                <li key={d.label} className="flex items-start gap-4">
+                  <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600">
+                    <d.icon className="h-5 w-5" />
+                  </span>
                   <div>
-                    <p className="mono-label text-[oklch(0.55_0.02_240)] text-xs mb-1">WEBSITE</p>
-                    <a
-                      href="https://www.fxnholdings.com"
-                      className="text-[oklch(0.85_0.02_240)] text-sm hover:text-[oklch(0.62_0.2_220)] transition-colors"
-                    >
-                      www.fxnholdings.com
-                    </a>
+                    <p className="eyebrow text-slate-400">{d.label}</p>
+                    {d.href ? (
+                      <a href={d.href} className="text-sm font-medium text-slate-900 transition-colors hover:text-emerald-600">{d.value}</a>
+                    ) : (
+                      <p className="text-sm font-medium text-slate-900">{d.value}</p>
+                    )}
                   </div>
-                </div>
+                </li>
+              ))}
+            </ul>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[oklch(0.62_0.2_220/0.12)] flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-[oklch(0.62_0.2_220)]" />
-                  </div>
-                  <div>
-                    <p className="mono-label text-[oklch(0.55_0.02_240)] text-xs mb-1">EMAIL</p>
-                    <a
-                      href="mailto:info@fxnholdings.com"
-                      className="text-[oklch(0.85_0.02_240)] text-sm hover:text-[oklch(0.62_0.2_220)] transition-colors"
-                    >
-                      info@fxnholdings.com
-                    </a>
-                  </div>
-                </div>
+            <div className="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-6">
+              <p className="eyebrow text-slate-400">We welcome enquiries about</p>
+              <ul className="mt-4 space-y-3">
+                {reasons.map((r) => (
+                  <li key={r.value} className="flex items-center gap-3 text-sm text-slate-700">
+                    <r.icon className="h-4 w-4 text-emerald-600" />
+                    {r.label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[oklch(0.62_0.2_220/0.12)] flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-[oklch(0.62_0.2_220)]" />
-                  </div>
-                  <div>
-                    <p className="mono-label text-[oklch(0.55_0.02_240)] text-xs mb-1">REGISTERED</p>
-                    <p className="text-[oklch(0.85_0.02_240)] text-sm">
-                      England &amp; Wales<br />
-                      <span className="mono-label text-[oklch(0.55_0.02_240)] text-xs">Co. No. 16134139</span>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[oklch(0.62_0.2_220/0.12)] flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-5 h-5 text-[oklch(0.62_0.2_220)]" />
-                  </div>
-                  <div>
-                    <p className="mono-label text-[oklch(0.55_0.02_240)] text-xs mb-1">RESPONSE TIME</p>
-                    <p className="text-[oklch(0.85_0.02_240)] text-sm">Within 2 business days</p>
-                  </div>
-                </div>
+          {/* Form */}
+          <Reveal delay={0.1}>
+            {sent ? (
+              <div className="flex h-full flex-col items-center justify-center rounded-2xl border border-emerald-200 bg-emerald-50/50 p-12 text-center">
+                <CheckCircle2 className="h-16 w-16 text-emerald-600" />
+                <h3 className="mt-6 text-2xl font-bold tracking-tight text-slate-900">Message sent</h3>
+                <p className="mt-3 max-w-sm text-slate-600">
+                  Thank you for reaching out to FXN Holdings. We&apos;ll review your message
+                  and respond within 2 business days.
+                </p>
               </div>
-
-              {/* Enquiry types */}
-              <div className="bg-white border border-[oklch(0.92_0.004_286.32)] p-5">
-                <p className="mono-label text-[oklch(0.55_0.02_240)] text-xs mb-4">WE WELCOME ENQUIRIES ABOUT</p>
-                <div className="flex flex-col gap-3">
-                  {contactReasons.map((r) => (
-                    <div key={r.value} className="flex items-center gap-3">
-                      <r.icon className="w-4 h-4 text-[oklch(0.62_0.2_220)]" />
-                      <span className="text-[oklch(0.45_0.02_240)] text-sm">{r.label}</span>
-                    </div>
-                  ))}
+            ) : (
+              <form onSubmit={submit} className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_1px_30px_rgba(15,23,42,0.05)]">
+                <h2 className="text-2xl font-bold tracking-tight text-slate-900">Send us a message</h2>
+                <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-700">Full name <span className="text-emerald-600">*</span></label>
+                    <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your full name" className={inputCls} />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-700">Email address <span className="text-emerald-600">*</span></label>
+                    <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@email.com" className={inputCls} />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-700">Company</label>
+                    <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} placeholder="Your company" className={inputCls} />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-700">Enquiry type</label>
+                    <select value={form.reason} onChange={(e) => setForm({ ...form, reason: e.target.value })} className={`${inputCls} appearance-none`}>
+                      <option value="">Select a reason</option>
+                      {reasons.map((r) => <option key={r.value} value={r.value}>{r.label}</option>)}
+                    </select>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-2"
-            >
-              {submitted ? (
-                <div className="bg-white border border-[oklch(0.62_0.2_220/0.4)] p-12 text-center h-full flex flex-col items-center justify-center">
-                  <CheckCircle className="w-16 h-16 text-[oklch(0.62_0.2_220)] mb-6" />
-                  <h3 className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] text-2xl mb-3">
-                    Message Sent!
-                  </h3>
-                  <p className="text-[oklch(0.45_0.02_240)] text-base max-w-sm">
-                    Thank you for reaching out to FXN Holdings. We&apos;ll review your message and get back to you within 2 business days.
-                  </p>
+                <div className="mt-5">
+                  <label className="mb-2 block text-sm font-medium text-slate-700">Message <span className="text-emerald-600">*</span></label>
+                  <textarea required rows={6} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your enquiry…" className={`${inputCls} resize-none`} />
                 </div>
-              ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  className="bg-white border border-[oklch(0.92_0.004_286.32)] p-8"
-                >
-                  <h2 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-2xl mb-6">
-                    Send Us a Message
-                  </h2>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
-                    <div>
-                      <label className="mono-label text-[oklch(0.55_0.02_240)] text-xs block mb-2">
-                        FULL NAME <span className="text-[oklch(0.62_0.2_220)]">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Your full name"
-                        className="w-full bg-[oklch(0.18_0.04_240)] border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="mono-label text-[oklch(0.55_0.02_240)] text-xs block mb-2">
-                        EMAIL ADDRESS <span className="text-[oklch(0.62_0.2_220)]">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="your@email.com"
-                        className="w-full bg-[oklch(0.18_0.04_240)] border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
-                    <div>
-                      <label className="mono-label text-[oklch(0.55_0.02_240)] text-xs block mb-2">
-                        COMPANY (OPTIONAL)
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="Your company name"
-                        className="w-full bg-[oklch(0.18_0.04_240)] border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="mono-label text-[oklch(0.55_0.02_240)] text-xs block mb-2">
-                        ENQUIRY TYPE
-                      </label>
-                      <select
-                        value={formData.reason}
-                        onChange={(e) => setFormData({ ...formData, reason: e.target.value })}
-                        className="w-full bg-[oklch(0.18_0.04_240)] border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors appearance-none"
-                      >
-                        <option value="" className="bg-[oklch(0.18_0.04_240)]">Select a reason</option>
-                        {contactReasons.map((r) => (
-                          <option key={r.value} value={r.value} className="bg-[oklch(0.18_0.04_240)]">
-                            {r.label}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="mb-6">
-                    <label className="mono-label text-[oklch(0.55_0.02_240)] text-xs block mb-2">
-                      MESSAGE <span className="text-[oklch(0.62_0.2_220)]">*</span>
-                    </label>
-                    <textarea
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell us about your enquiry..."
-                      rows={6}
-                      className="w-full bg-[oklch(0.18_0.04_240)] border border-[oklch(0.92_0.004_286.32)] text-[oklch(0.235_0.015_65)] placeholder-[oklch(0.45_0.02_240)] px-4 py-3 text-sm focus:outline-none focus:border-[oklch(0.62_0.2_220)] transition-colors resize-none"
-                      required
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="group w-full flex items-center justify-center gap-2 bg-[oklch(0.62_0.2_220)] hover:bg-[oklch(0.55_0.22_220)] text-[oklch(0.235_0.015_65)] py-4 font-['Urbanist'] font-600 text-sm transition-all duration-300 glow-blue"
-                  >
-                    Send Message
-                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-
-                  <p className="text-[oklch(0.45_0.02_240)] text-xs mt-4 text-center">
-                    By submitting this form, you agree to our Privacy Policy. We will never share your information with third parties.
-                  </p>
-                </form>
-              )}
-            </motion.div>
-          </div>
+                <button type="submit" className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-navy-soft">
+                  Send message
+                  <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </button>
+                <p className="mt-4 text-center text-xs text-slate-400">
+                  By submitting this form you agree to our Privacy Policy. We never share your information with third parties.
+                </p>
+              </form>
+            )}
+          </Reveal>
         </div>
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20 bg-[oklch(0.96_0.002_240)] relative">
-        <div className="absolute inset-0 blueprint-grid opacity-10" />
-        <div className="relative container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-px bg-[oklch(0.75_0.17_75)]" />
-              <span className="mono-label text-[oklch(0.75_0.17_75)] text-xs">FAQ</span>
-            </div>
-            <h2
-              className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] leading-tight"
-              style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
-            >
-              Frequently Asked Questions
-            </h2>
-          </motion.div>
-
-          <div className="max-w-3xl flex flex-col gap-3">
-            {faqs.map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.4 }}
-                className="bg-white border border-[oklch(0.92_0.004_286.32)] overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-left"
-                >
-                  <span className="font-['Urbanist'] font-500 text-[oklch(0.235_0.015_65)] text-sm pr-4">
-                    {faq.q}
-                  </span>
-                  <span
-                    className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-[oklch(0.62_0.2_220)] transition-transform duration-300"
-                    style={{ transform: openFaq === i ? "rotate(45deg)" : "rotate(0deg)" }}
-                  >
-                    +
-                  </span>
-                </button>
-                {openFaq === i && (
-                  <div className="px-6 pb-5 border-t border-[oklch(0.92_0.004_286.32)]">
-                    <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed pt-4">
-                      {faq.a}
-                    </p>
-                  </div>
-                )}
-              </motion.div>
+      <section className="border-t border-slate-200 bg-slate-50 py-20 sm:py-28">
+        <div className="container">
+          <Reveal className="max-w-2xl">
+            <p className="eyebrow text-emerald-600">FAQ</p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Frequently asked questions.</h2>
+          </Reveal>
+          <div className="mx-auto mt-12 max-w-3xl space-y-3">
+            {faqs.map((f, i) => (
+              <Reveal key={i} delay={i * 0.04}>
+                <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+                  <button onClick={() => setOpen(open === i ? null : i)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left">
+                    <span className="font-['Urbanist'] font-semibold text-slate-900">{f.q}</span>
+                    <Plus className={`h-5 w-5 flex-shrink-0 text-emerald-600 transition-transform duration-300 ${open === i ? "rotate-45" : ""}`} />
+                  </button>
+                  {open === i && (
+                    <div className="border-t border-slate-100 px-6 pb-5 pt-4">
+                      <p className="text-sm leading-relaxed text-slate-600">{f.a}</p>
+                    </div>
+                  )}
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

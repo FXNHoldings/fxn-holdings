@@ -1,150 +1,110 @@
 /*
- * FXN Holdings — Footer Component
- * Design: Kinetic Blueprint — light footer with blueprint grid, gold accents
+ * FXN Holdings — Footer
+ * Corporate / institutional: navy band, emerald accents, tidy columns.
  */
 import Link from "next/link";
-import { Globe, Mail, MapPin, ExternalLink } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
+import Logo from "@/components/Logo";
 
-const portfolioLinks = [
-  { label: "E-Commerce Platforms", href: "/portfolio#ecommerce" },
-  { label: "Travel Websites", href: "/portfolio#travel" },
-  { label: "Blog & Content Sites", href: "/portfolio#blogs" },
-  { label: "Price Comparison", href: "/portfolio#comparison" },
-  { label: "Affiliate Networks", href: "/portfolio#affiliate" },
+const explore = [
+  { label: "Home", href: "/" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "About", href: "/about" },
+  { label: "Sitemap", href: "/sitemap" },
+  { label: "Contact", href: "/contact" },
 ];
 
-const companyLinks = [
-  { label: "About FXN Holdings", href: "/about" },
-  { label: "Our Portfolio", href: "/portfolio" },
-  { label: "Contact Us", href: "/contact" },
+const verticals = [
+  { label: "E-Commerce", href: "/portfolio#ecommerce" },
+  { label: "Travel & Booking", href: "/portfolio#travel" },
+  { label: "Content & Publishing", href: "/portfolio#content" },
+  { label: "Price Comparison", href: "/portfolio#comparison" },
+  { label: "Affiliate", href: "/portfolio#affiliate" },
+];
+
+const legal = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Cookie Policy", href: "/cookies" },
 ];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="relative bg-[oklch(0.96_0.002_240)] border-t border-[oklch(0.92_0.004_286.32)] overflow-hidden">
-      {/* Blueprint grid background */}
-      <div className="absolute inset-0 blueprint-grid opacity-30" />
-
-      <div className="relative container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand Column */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-sm bg-[oklch(0.62_0.2_220)] flex items-center justify-center">
-                <Globe className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <span className="font-['Urbanist'] font-700 text-[oklch(0.235_0.015_65)] text-xl leading-none">
-                  FXN<span className="text-[oklch(0.62_0.2_220)]"> Holdings</span>
-                </span>
-                <p className="mono-label text-[oklch(0.45_0.02_240)] text-[10px] leading-none mt-0.5">
-                  LIMITED · REGISTERED IN ENGLAND & WALES
-                </p>
-              </div>
-            </div>
-            <p className="text-[oklch(0.45_0.02_240)] text-sm leading-relaxed max-w-sm mb-6">
-              FXN Holdings Limited is a UK-registered digital holding company building and managing a diverse portfolio of high-performance websites across ecommerce, travel, content, and affiliate marketing verticals.
+    <footer className="bg-navy text-slate-300">
+      <div className="container py-16">
+        <div className="grid gap-12 md:grid-cols-12">
+          {/* Brand */}
+          <div className="md:col-span-5">
+            <Logo variant="dark" />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-400">
+              A UK-registered digital holdings company that builds, acquires, and
+              operates a diversified portfolio of online businesses across
+              commerce, travel, content, and performance marketing.
             </p>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2 text-[oklch(0.45_0.02_240)] text-sm">
-                <MapPin className="w-4 h-4 text-[oklch(0.62_0.2_220)] flex-shrink-0" />
-                <span>Registered in England &amp; Wales</span>
-              </div>
-              <div className="flex items-center gap-2 text-[oklch(0.45_0.02_240)] text-sm">
-                <Globe className="w-4 h-4 text-[oklch(0.62_0.2_220)] flex-shrink-0" />
-                <a
-                  href="https://www.fxnholdings.com"
-                  className="hover:text-[oklch(0.235_0.015_65)] transition-colors"
-                >
-                  www.fxnholdings.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2 text-[oklch(0.45_0.02_240)] text-sm">
-                <Mail className="w-4 h-4 text-[oklch(0.62_0.2_220)] flex-shrink-0" />
-                <a
-                  href="mailto:info@fxnholdings.com"
-                  className="hover:text-[oklch(0.235_0.015_65)] transition-colors"
-                >
-                  info@fxnholdings.com
-                </a>
-              </div>
-            </div>
+            <a
+              href="mailto:info@fxnholdings.com"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-emerald-400"
+            >
+              <Mail className="h-4 w-4" />
+              info@fxnholdings.com
+            </a>
           </div>
 
-          {/* Portfolio Links */}
-          <div>
-            <h4 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-sm mb-5 flex items-center gap-2">
-              <span className="w-4 h-px bg-[oklch(0.75_0.17_75)]" />
-              Our Portfolio
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {portfolioLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href}>
-                    <span className="text-[oklch(0.45_0.02_240)] text-sm hover:text-[oklch(0.62_0.2_220)] transition-colors flex items-center gap-1.5 group">
-                      <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link.label}
-                    </span>
+          {/* Explore */}
+          <div className="md:col-span-3">
+            <h4 className="eyebrow text-emerald-400">Explore</h4>
+            <ul className="mt-5 space-y-3">
+              {explore.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    href={l.href}
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
+                  >
+                    {l.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company Links */}
-          <div>
-            <h4 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-sm mb-5 flex items-center gap-2">
-              <span className="w-4 h-px bg-[oklch(0.75_0.17_75)]" />
-              Company
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href}>
-                    <span className="text-[oklch(0.45_0.02_240)] text-sm hover:text-[oklch(0.62_0.2_220)] transition-colors flex items-center gap-1.5 group">
-                      <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link.label}
-                    </span>
+          {/* Portfolio */}
+          <div className="md:col-span-4">
+            <h4 className="eyebrow text-emerald-400">Portfolio</h4>
+            <ul className="mt-5 space-y-3">
+              {verticals.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    href={l.href}
+                    className="group inline-flex items-center gap-1.5 text-sm text-slate-400 transition-colors hover:text-white"
+                  >
+                    {l.label}
+                    <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
                   </Link>
                 </li>
               ))}
             </ul>
-
-            <div className="mt-8">
-              <h4 className="font-['Urbanist'] font-600 text-[oklch(0.235_0.015_65)] text-sm mb-3 flex items-center gap-2">
-                <span className="w-4 h-px bg-[oklch(0.75_0.17_75)]" />
-                Legal
-              </h4>
-              <ul className="flex flex-col gap-2">
-                <li>
-                  <span className="text-[oklch(0.45_0.02_240)] text-sm hover:text-[oklch(0.62_0.2_220)] transition-colors cursor-pointer">
-                    Privacy Policy
-                  </span>
-                </li>
-                <li>
-                  <span className="text-[oklch(0.45_0.02_240)] text-sm hover:text-[oklch(0.62_0.2_220)] transition-colors cursor-pointer">
-                    Terms of Service
-                  </span>
-                </li>
-                <li>
-                  <span className="text-[oklch(0.45_0.02_240)] text-sm hover:text-[oklch(0.62_0.2_220)] transition-colors cursor-pointer">
-                    Cookie Policy
-                  </span>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="section-rule mt-12 mb-6" />
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="mono-label text-[oklch(0.55_0.02_240)] text-xs">
-            © {new Date().getFullYear()} FXN Holdings Limited. All rights reserved. Registered in England &amp; Wales.
-          </p>
-          <p className="mono-label text-[oklch(0.55_0.02_240)] text-xs">
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
+          <p className="text-xs text-slate-500">
+            © {year} FXN Holdings Limited · Registered in England &amp; Wales ·
             Company No. 16134139 · ICO Reg. ZB940664
           </p>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            {legal.map((l) => (
+              <li key={l.label}>
+                <Link
+                  href={l.href}
+                  className="text-xs text-slate-500 transition-colors hover:text-slate-300"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>
